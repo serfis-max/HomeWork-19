@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone numbers</title>
+  <link href="~/css/Styles.css" rel="stylesheet" />
+  <script>
+    function VoIP() {
+      alert("VoIP is unavailable.");
+    }
+  </script>
+</head>
+
+<body class="BodyBackground">
+  <div>
+    <h1>
+      <span>
+        Phone book
+      </span>
+    </h1>
+  </div>
+
+  <table class="TableMain">
+    @foreach (var item in Model)
+    {
+      <tr id="@item.Id">
+        <td align="center">
+          <a href="@Url.Action("UsersInfo", new { id = item.Id })" class="btn btn-primary btn-lg">
+            @item.Id
+          </a>
+        </td>
+        <td>
+          @item.Surname
+        </td>
+        <td>
+          @item.FirstName
+        </td>
+        <td>
+          @item.Patronymic
+        </td>
+        <td>
+          <input type="image" src="~/lib/img/Phone32.png" onclick="VoIP()">
+        </td>
+      </tr>
+    }
+  </table>
+
+</body>
+</html>

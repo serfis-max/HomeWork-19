@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User_@Model.Id</title>
+  <link href="~/css/Styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div>
+    <img class="Image" src="~/lib/img/PhoneBook.jpg" alt="Alternate Text">
+    <h1 class="HeaderAbs">
+      <span>
+        @Model.Id @Model.Surname @Model.FirstName @Model.Patronymic
+      </span>
+    </h1>
+  </div>
+
+  <table class="TableUser">
+    <tr>
+      <td>
+        Phone number
+      </td>
+      <td>
+        @Model.PhoneNumber
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Adress
+      </td>
+      <td>
+        @Model.Adress
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Description
+      </td>
+      <td>
+        @Model.Description
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <input class="Button" type="button" onclick="history.back();" value="Назад">
+  </p>
+</body>
+</html>
